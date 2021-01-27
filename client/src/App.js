@@ -6,6 +6,7 @@ function App() {
   const [nextUrl, setNextUrl] = useState([]);
   const [prevUrl, setPrevUrl] = useState([]);
   const [loading, setLoading] = useState([]);
+  const initialUrl = "https://pokeapi.co/api/v2/pokemon";
   return <div></div>;
 }
 
