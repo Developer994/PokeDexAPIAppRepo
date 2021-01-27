@@ -1,4 +1,4 @@
-import React, { useState, useEfect } from "react";
+import React, { useState, useEfect, useEffect } from "react";
 import "./App.css";
 
 function App() {
@@ -7,6 +7,13 @@ function App() {
   const [prevUrl, setPrevUrl] = useState([]);
   const [loading, setLoading] = useState([]);
   const initialUrl = "https://pokeapi.co/api/v2/pokemon";
+
+  useEffect(() => {
+    async function fetchData() {
+      let response = await getAllPokemon(initialUrl); // getAllPokemon -> Handles the fetching of the api data
+    }
+  }, []);
+
   return <div></div>;
 }
 
