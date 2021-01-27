@@ -1,5 +1,6 @@
 import React, { useState, useEfect, useEffect } from "react";
 import { getAllPokemon, getPokemon } from "./services/pokemon";
+import Card from "./components/Card/Card";
 import "./App.css";
 
 function App() {
@@ -29,7 +30,22 @@ function App() {
     );
     setPokemonData(_pokemonData);
   };
-  return <div>{loading ? <h1>Loading ...</h1> : <h1>Data is fetched</h1>}</div>;
+
+  return (
+    <div>
+      {loading ? (
+        <h1>Loading ...</h1>
+      ) : (
+        <>
+          <div className="grid-container">
+            {pokemonData.map((pokemon, i) => {
+              return <Card key={i} pokemon={pokemon} />;
+            })}
+          </div>
+        </>
+      )}
+    </div>
+  );
 }
 
 export default App;
